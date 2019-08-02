@@ -10,7 +10,7 @@ source:
   sha256: eebcdd166fc231bb3afa11ab0c9c93a404b2be1e7ec8cc4d006fb03a8cf25d02
   
 build:
-  number: 0
+  number: 1
   skip: True  # [win and py<36]
   script: {{ PYTHON }} -m pip install . -vv  # [linux]
   script: {{ PYTHON }} setup.py bdist_wheel --plat-name macosx-10.9-x86_64 && pip install --no-index --find-links=dist foam_ct_phantom  # [osx]
