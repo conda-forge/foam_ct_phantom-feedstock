@@ -1,5 +1,5 @@
 {% set name = "foam_ct_phantom" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/dmpelt/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: eebcdd166fc231bb3afa11ab0c9c93a404b2be1e7ec8cc4d006fb03a8cf25d02
-  
+  sha256: f08884c6b375cb1602d0339142dca7791ea256de4025ef7fe38cf879e6cf74e0
+
 build:
-  number: 1
-  skip: True  # [win and py<36]
+  number: 0
+  skip: true  # [win and py<36]
   script: {{ PYTHON }} -m pip install . -vv  # [linux]
   script: {{ PYTHON }} setup.py bdist_wheel --plat-name macosx-10.9-x86_64 && pip install --no-index --find-links=dist foam_ct_phantom  # [osx]
   script: {{ PYTHON }} -m pip install . -vv --install-option=--generator --install-option="NMake Makefiles"  # [win]
@@ -36,7 +36,7 @@ requirements:
     - sortedcollections
     - openmp
     - pathlib2
-    
+
 test:
   imports:
     - foam_ct_phantom
@@ -46,7 +46,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A Python package for generating foam-like phantoms for CT.'
+  summary: A Python package for generating foam-like phantoms for CT.
 
   description: |
     A Python package for generating foam-like phantoms for CT.
