@@ -1,5 +1,5 @@
 {% set name = "foam_ct_phantom" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dmpelt/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: b3c5c0ac3ecfd26be151afe53b9f292c56d5b018bb9504f8c1f7683fef9aa0b8
+  sha256: 814dcbd1fa6f8bc353937e2a53e2ac1a67645b4762c7e9517a1624560fe97275
 
 build:
   number: 0
