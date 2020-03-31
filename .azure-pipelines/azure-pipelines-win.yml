@@ -14,8 +14,12 @@ jobs:
         CONFIG: win_python3.6.____cpython
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
-      win_python3.7.____cpython:
-        CONFIG: win_python3.7.____cpython
+      win_c_compilervs2015python3.7:
+        CONFIG: win_c_compilervs2015python3.7
+        CONDA_BLD_PATH: D:\\bld\\
+        UPLOAD_PACKAGES: True
+      win_c_compilervs2015python3.8:
+        CONFIG: win_c_compilervs2015python3.8
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
   steps:
@@ -100,7 +104,11 @@ jobs:
 
     - script: |
         set "GIT_BRANCH=%BUILD_SOURCEBRANCHNAME%"
+<<<<<<< HEAD
         upload_package .\ ".\recipe" .ci_support\%CONFIG%.yaml
+=======
+        upload_package .\ .\recipe .ci_support\%CONFIG%.yaml
+>>>>>>> a516e7143385617134e1b7ab68f17573de757bc9
       displayName: Upload package
       env:
         BINSTAR_TOKEN: $(BINSTAR_TOKEN)
